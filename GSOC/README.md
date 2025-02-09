@@ -1,0 +1,47 @@
+# HEALES Project Ideas  
+
+HEALES with its supported projects: Longevity Genie and Just-DNA-Seq is applying for Google Summer of Code 2025.
+
+Here is our current GSOC project ideas:
+
+## 1. Automating the Generation of Database-Specific Agents  
+Our goal is to enable the automatic creation of database- or knowledge-graph-specific LLM agents, eliminating the need for manual prompt crafting. So far, we have implemented agents that can query multiple databases (OpenGenes, ClinicalTrials, AnAge, DiseaseNet, etc.). In most cases, a significant portion of the work involves encoding knowledge about the database structure and terminology, as well as writing and verifying tests. These processes can be automated with advancements in LLMs and open-source reasoning models (e.g., DeepSeek R1).  
+
+We aim to develop an agent (or a swarm of agents) capable of automating the creation of database agents by traversing the structure of any given database, parsing its documentation and relevant papers (if available), and generating comprehensive test coverage for the agent.  
+
+---
+
+## 2. Knowledge Graph Creation Agent  
+We propose to develop an agent (or a set of agents) that can automatically create and manage knowledge graphs by integrating data from multiple databases. We have been contributors to the [Biochatter consortium](https://biocypher.org) ([https://biochatter.org](https://biochatter.org)), which facilitates the merging of multiple databases into a single knowledge graph. These graphs can be queried using languages like CYPHER, SPARQL, or GraphQL.  
+
+This approach allows researchers to uncover interconnections between multiple databases and significantly simplifies agent–database interactions. With a knowledge graph, there is no longer a need to explain the structure of each database separately to the agent. This is crucial because an increasing number of diverse databases can confuse LLMs about which function to call.  
+
+The proposed agent will automate the process of building knowledge graphs by analyzing database schemas, understanding documentation, and generating appropriate queries to integrate and query data from various sources.  
+
+---
+
+## 3. Animal Experiments Extractor  
+In many biomedical fields, especially aging biology research, data from animal experiments is essential for guiding further research. Typically, such databases are manually curated by multiple individuals who read articles and extract relevant data—a time-consuming and labor-intensive process. As a result, many existing databases (e.g., SynergyAge, HAGR, OpenGenes) lack important, recent studies and are not frequently updated.  
+
+With LLM agents, this process can be automated. Existing databases (e.g., SynergyAge, OpenGenes, GenAge) can serve as benchmarks for agent development, where the agent must extract the same or nearly identical values as human curators.  
+
+---
+
+## 4. Automated Bioinformatics Data Preprocessing & Integration  
+The biomedical research field offers a wealth of open data, but it often lacks uniformity and standardization, making comparison, unification, and reuse of published data a tedious task. These efforts require careful adjustment, refinement, and cleanup, often needing an individual approach to each dataset and human ingenuity to recognize what exactly should be done on a case-by-case basis.  
+
+The rapid development of LLM reasoning capabilities suggests a promising opportunity to delegate these routine tasks to an AI assistant, freeing up human researchers to focus on end goals.  
+
+**Key tasks for automation include:**  
+- **Data Cleaning & Standardization**: LLMs can assist in normalizing inconsistent metadata, fixing formatting errors, and resolving missing values in large biological datasets.  
+- **Ontology Mapping & Annotation**: They can map biological terms across different databases (e.g., Gene Ontology, Gene Expression Omnibus, KEGG pathways), reducing manual effort in annotation.  
+- **Data Harmonization**: LLMs can unify heterogeneous datasets from multiple sources by understanding and translating between different data schemas.  
+
+---
+
+## 5. Just-Agent Open-Source Agent Store  
+So far, there are several proprietary agent stores (e.g., agent.ai, illa.ai, metaschool.so, agen.cy) where users can publish their agents for others to install. However, all of these are proprietary.  
+
+We propose to develop an **open-source agent store** as part of the Just-Agents and Longevity-Genie ecosystem. This would allow users to deploy and publish agents in an open-source store. We already have support for YAML-based agent specifications combined with agent-specific containers and Python packages in the Just-Agents library. The next step is to add the ability to publish these agents in an open-source store and allow users to install them as if they were apps.  
+
+---
